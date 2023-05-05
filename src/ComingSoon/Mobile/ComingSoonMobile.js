@@ -12,42 +12,44 @@ export const ComingSoonMobile = () => {
         className={styles.left}
       >
         <div className={styles.wrapper}>
-          <img className={styles.logo} src={logo} />
-          <h1 className={styles.heading}>
-            <span className={styles.firstWord}>WE'RE </span> <br /> COMING{" "}
-            <br /> SOON
-          </h1>
+          <img className={styles.logo} src={logo} alt="Logo" />
+          <div className={styles.bgContainer}>
+            <img className={styles.person} src={person} alt="Hero Img" />
+          </div>
+          <div className={styles.bottomWrapper}>
+            <h1 className={styles.heading}>
+              <span className={styles.firstWord}>WE'RE </span> <br /> COMING{" "}
+              <br /> SOON
+            </h1>
 
-          <p className={styles.text}>
-            Hello fellow shoppers! We're currently building our new fashion
-            store. Add your email below to stay up-to-date with announcements
-            and our launch deals.
-          </p>
+            <p className={styles.text}>
+              Hello fellow shoppers! We're currently building our new fashion
+              store. Add your email below to stay up-to-date with announcements
+              and our launch deals.
+            </p>
 
-          <div className={styles.input}>
-            <input
-              className={styles.inputField}
-              type="email"
-              placeholder="Email Address"
-            />
+            <div className={styles.input}>
+              <input
+                className={styles.inputField}
+                type="email"
+                placeholder="Email Address"
+              />
 
-            <button
-              style={{
-                background: `url(${btn_bg})`,
-                backgroundImage:
-                  "linear-gradient(135deg,hsl(0, 80%, 86%),hsl(0, 74%, 74%))",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "50%",
-              }}
-              className={styles.submit}
-            >
-              {<img src={btn_bg} />}
-            </button>
+              <button
+                style={{
+                  background: `url(${btn_bg})`,
+                  backgroundImage:
+                    "linear-gradient(135deg,hsl(0, 80%, 86%),hsl(0, 74%, 74%))",
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "50%"
+                }}
+                className={styles.submit}
+              >
+                {<img src={btn_bg} />}
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-      <div className={styles.right}>
-        <img className={styles.person} src={person} alt="person" />
       </div>
     </div>
   );
