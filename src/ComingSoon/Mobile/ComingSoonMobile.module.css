@@ -57,61 +57,64 @@
   font-family: "Josefin Sans", sans-serif;
 }
 
-
 .inputField {
-  /* width: 100%; */
   display: block;
-  margin: 0 auto;
   height: 50px;
   border-radius: 30px;
-  /* margin-left: 175px; */
-  /* padding-left: 30px; */
   padding-left: 30px;
-  ;
-
-
+  float: left;
   border: 1px hsl(354, 40%, 76%) solid;
-
+  min-width: 250px;
 }
 
 .inputField::placeholder {
   /* padding-left: 30px; */
   color: hsl(354, 40%, 76%);
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 .inputField:focus {
-
   outline: none;
   border: 1px hsl(354, 26%, 39%) solid;
-
 }
 
 .input {
   display: flex;
-
+  justify-content: center;
   height: 20px;
   margin-top: 40px;
-  width: 100%;
+  width: 1000x;
 }
 
-
 .submit {
-  width: 120px;
+  width: 85px;
   height: 55px;
   position: relative;
   right: 86px;
   border-radius: 30px;
   border-style: none;
   cursor: pointer;
-
 }
 
 .submit:hover {
-
-  background: linear-gradient(135deg, hsl(5, 83%, 88%), hsl(5, 77%, 76%)) !important;
+  background: linear-gradient(
+    135deg,
+    hsl(5, 83%, 88%),
+    hsl(5, 77%, 76%)
+  ) !important;
 }
 
 .submit:active {
-  background: linear-gradient(135deg, hsl(5, 85%, 92%), hsl(5, 79%, 80%)) !important;
+  background: linear-gradient(
+    135deg,
+    hsl(5, 85%, 92%),
+    hsl(5, 79%, 80%)
+  ) !important;
+}
+
+.label {
+  width: 300px;
+  height: 50px;
+  background-color: red;
+  margin: 0 auto;
 }

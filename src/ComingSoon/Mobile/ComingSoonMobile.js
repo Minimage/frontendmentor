@@ -29,24 +29,26 @@ export const ComingSoonMobile = () => {
             </p>
 
             <div className={styles.input}>
-              <input
-                className={styles.inputField}
-                type="email"
-                placeholder="Email Address"
-              />
+              <label className="label">
+                <input
+                  className={styles.inputField}
+                  type="email"
+                  placeholder="Email Address"
+                />
 
-              <button
-                style={{
-                  background: `url(${btn_bg})`,
-                  backgroundImage:
-                    "linear-gradient(135deg,hsl(0, 80%, 86%),hsl(0, 74%, 74%))",
-                  backgroundRepeat: "no-repeat",
-                  backgroundPosition: "50%"
-                }}
-                className={styles.submit}
-              >
-                {<img src={btn_bg} />}
-              </button>
+                <button
+                  style={{
+                    background: `url(${btn_bg})`,
+                    backgroundImage:
+                      "linear-gradient(135deg,hsl(0, 80%, 86%),hsl(0, 74%, 74%))",
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "50%",
+                  }}
+                  className={styles.submit}
+                >
+                  {<img src={btn_bg} />}
+                </button>
+              </label>
             </div>
           </div>
         </div>
