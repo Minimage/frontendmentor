@@ -73,8 +73,6 @@ form {
 }
 
 .inputField {
-
-
   height: 50px;
 
   flex-grow: 1;
@@ -82,7 +80,6 @@ form {
   border: none;
   padding-left: 20px;
   /* margin-left: 30px; */
-
 }
 
 .inputField::placeholder {
@@ -91,13 +88,10 @@ form {
   font-family: "Josefin Sans", sans-serif;
 }
 
-
 .inputField:focus {
   outline: none;
   /* border: 1px hsl(354, 26%, 39%) solid; */
 }
-
-
 
 .submit {
   width: 85px;
@@ -111,13 +105,48 @@ form {
 }
 
 .submit:hover {
-  background: linear-gradient(135deg,
-      hsl(5, 83%, 88%),
-      hsl(5, 77%, 76%)) !important;
+  background: linear-gradient(
+    135deg,
+    hsl(5, 83%, 88%),
+    hsl(5, 77%, 76%)
+  ) !important;
 }
 
 .submit:active {
-  background: linear-gradient(135deg,
-      hsl(5, 85%, 92%),
-      hsl(5, 79%, 80%)) !important;
+  background: linear-gradient(
+    135deg,
+    hsl(5, 85%, 92%),
+    hsl(5, 79%, 80%)
+  ) !important;
+}
+
+.hide {
+  /* display: none; */
+  visibility: hidden;
+  padding-left: 20px;
+}
+
+.show {
+  display: block;
+
+  visibility: visible;
+}
+
+.errorBtn {
+  margin: auto;
+  width: 25px;
+  height: 25px;
+  margin-right: 20px;
+}
+
+.errorMsg {
+  color: red;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding-left: 10px;
+}
+
+.bottomWrapper {
+  width: fit-content;
+  margin: auto;
 }
