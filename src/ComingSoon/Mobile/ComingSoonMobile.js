@@ -56,7 +56,13 @@ export const ComingSoonMobile = () => {
             </p>
 
             <div className={styles.bottomWrapper}>
-              <form>
+              <form
+                className={
+                  error_icon === false
+                    ? `${styles.form}`
+                    : `${styles.formError}`
+                }
+              >
                 <input
                   className={styles.inputField}
                   type="email"

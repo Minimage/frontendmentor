@@ -59,7 +59,7 @@
   margin-bottom: 40px;
 }
 
-form {
+.form {
   /* This bit sets up the horizontal layout */
   display: flex;
   flex-direction: row;
@@ -70,6 +70,19 @@ form {
   /* I've used padding so you can see the edges of the elements. */
   border: 1px hsl(354, 40%, 76%) solid;
   border-radius: 30px;
+}
+
+.formError {
+  /* This bit sets up the horizontal layout */
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  width: max-content;
+  overflow: hidden;
+
+  /* I've used padding so you can see the edges of the elements. */
+  border: 2px hsl(0, 93%, 68%) solid;
+  border-radius: 45px;
 }
 
 .inputField {
@@ -105,19 +118,15 @@ form {
 }
 
 .submit:hover {
-  background: linear-gradient(
-    135deg,
-    hsl(5, 83%, 88%),
-    hsl(5, 77%, 76%)
-  ) !important;
+  background: linear-gradient(135deg,
+      hsl(5, 83%, 88%),
+      hsl(5, 77%, 76%)) !important;
 }
 
 .submit:active {
-  background: linear-gradient(
-    135deg,
-    hsl(5, 85%, 92%),
-    hsl(5, 79%, 80%)
-  ) !important;
+  background: linear-gradient(135deg,
+      hsl(5, 85%, 92%),
+      hsl(5, 79%, 80%)) !important;
 }
 
 .hide {
@@ -137,6 +146,7 @@ form {
   width: 25px;
   height: 25px;
   margin-right: 20px;
+  z-index: 1;
 }
 
 .errorMsg {
@@ -149,4 +159,5 @@ form {
 .bottomWrapper {
   width: fit-content;
   margin: auto;
+  z-index: 1;
 }
