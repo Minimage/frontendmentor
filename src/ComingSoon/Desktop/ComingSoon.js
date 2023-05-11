@@ -6,11 +6,17 @@ import btn_bg from "../../icons/icon-arrow.svg";
 import { useState } from "react";
 
 export const ComingSoon = () => {
+  // Validation check to see if the email string contains valid characters.
+  // If email doesnt contain valid characters, then it will trigger an error
   const errorValues = ["@", "."];
+
+  // Inistialize email
   const [email, setEmail] = useState("");
 
+  // If an error is encountered, toggle will be set to true
   const [toggle, setToggle] = useState(false);
 
+  // When button is pressed, this function will fire and check if the email is valid
   const handleClick = () => {
     const errorHandler = errorValues.every((item) => email.includes(item));
 
@@ -18,6 +24,13 @@ export const ComingSoon = () => {
       setToggle(false);
     } else setToggle(true);
     console.log(toggle);
+  };
+
+  // On every key down, this function is called but will not fire until enter is pressed
+  const something = (event) => {
+    if (event.keyCode === 13) {
+      handleClick(); // If enter key is pressed, calls handleClick function
+    }
   };
 
   return (
@@ -50,9 +63,11 @@ export const ComingSoon = () => {
                 }
                 type="email"
                 placeholder="Email Address"
+                onKeyDown={(e) => something(e)}
               />
 
               <button
+                type="submit"
                 onClick={handleClick}
                 style={{
                   background: `url(${btn_bg})`,
