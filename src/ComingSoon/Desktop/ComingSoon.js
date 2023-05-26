@@ -6,7 +6,6 @@ import btn_bg from "../../icons/icon-arrow.svg";
 import { useState, useRef, useEffect } from "react";
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import Success from "../../assests/success.json";
-import Example from "./Example";
 
 export const ComingSoon = () => {
   // Validation check to see if the email string contains valid characters.
