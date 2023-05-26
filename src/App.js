@@ -1,4 +1,3 @@
-import { ComingSoon } from "./ComingSoon/Desktop/ComingSoon";
 import "./App.css";
 import { Responsive } from "./Responsive";
 

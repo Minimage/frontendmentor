@@ -3,7 +3,10 @@ import person from "../../icons/hero-desktop.jpg";
 import background from "../../icons/bg-pattern-desktop.svg";
 import logo from "../../icons/logo.svg";
 import btn_bg from "../../icons/icon-arrow.svg";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+import Lottie, { LottieRefCurrentProps } from "lottie-react";
+import Success from "../../assests/success.json";
+import Example from "./Example";
 
 export const ComingSoon = () => {
   // Validation check to see if the email string contains valid characters.
@@ -16,13 +19,28 @@ export const ComingSoon = () => {
   // If an error is encountered, toggle will be set to true
   const [toggle, setToggle] = useState(false);
 
+  // Determines whether to show or hide overlay
+  const [overlay, setOverly] = useState(false);
+
+  //stops animation after it has be completed
+  const stopAnimation = () => {
+    lottieRef.current.stop();
+  };
+
+  // Plays animation when button is clicked and conditions are met
+  const playAnimation = () => {
+    lottieRef.current.play();
+  };
+
   // When button is pressed, this function will fire and check if the email is valid
   const handleClick = () => {
     const errorHandler = errorValues.every((item) => email.includes(item));
-
-    if (errorHandler == true) {
+    if (errorHandler === true) {
+      setOverly(true);
+      playAnimation();
       setToggle(false);
     } else setToggle(true);
+
     console.log(toggle);
   };
 
@@ -33,14 +51,36 @@ export const ComingSoon = () => {
     }
   };
 
+  const lottieRef = useRef();
+
   return (
     <div className={styles.container}>
+      <div
+        className={
+          overlay === false ? `${styles.overlayHide}` : `${styles.overlayShow}`
+        }
+      >
+        <Lottie
+          lottieRef={lottieRef}
+          loop={false}
+          // action="visibility: [0.4, 0.9]"
+          onComplete={() => {
+            setOverly(false);
+            stopAnimation();
+
+            // lottieRef.current.play();
+          }}
+          style={{ position: "absolute", left: "42%", top: "29%" }}
+          animationData={Success}
+          // loop={false}
+        />
+      </div>
       <div
         style={{ backgroundImage: `url(${background})` }}
         className={styles.left}
       >
         <div className={styles.wrapper}>
-          <img className={styles.logo} src={logo} />
+          <img className={styles.logo} alt="Logo" src={logo} />
           <h1 className={styles.heading}>
             <span className={styles.firstWord}>WE'RE </span> <br /> COMING{" "}
             <br /> SOON
@@ -80,7 +120,7 @@ export const ComingSoon = () => {
                   toggle ? `${styles.submitError}` : `${styles.submit}`
                 }
               >
-                {<img src={btn_bg} />}
+                {<img alt="Logo" src={btn_bg} />}
               </button>
             </div>
 
