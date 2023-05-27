@@ -1,9 +1,10 @@
 import "./App.css";
+import { Responsive } from "./Responsive";
 
 function App() {
   return (
     <div className="App">
-      <h1>Base Branch</h1>
+      <Responsive />
     </div>
   );
 }
