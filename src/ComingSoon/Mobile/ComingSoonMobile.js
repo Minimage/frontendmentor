@@ -10,6 +10,7 @@ import { useState, useRef } from "react";
 
 export const ComingSoonMobile = () => {
   const lottieRef = useRef();
+  const bottomRef = useRef(null);
   const [email, setEmail] = useState("");
   const [error_msg, setErrorMsg] = useState("");
   const [error_icon, setErrorIcon] = useState(false);
@@ -32,6 +33,8 @@ export const ComingSoonMobile = () => {
     if (value === false) {
       setErrorMsg("Please enter a valid email");
       setErrorIcon(true);
+
+      bottomRef.current?.scrollIntoView({ behavior: "smooth" });
     } else {
       setErrorMsg("");
       setOverlay(true);
@@ -53,6 +56,7 @@ export const ComingSoonMobile = () => {
             stopAnimation();
             setOverlay(false);
           }}
+          style={{ width: "200px", top: "50%" }}
           lottieRef={lottieRef}
           animationData={Success}
         />
@@ -72,11 +76,6 @@ export const ComingSoonMobile = () => {
               <br /> SOON
             </h1>
 
-            <p>
-              {/* {word.includes(contains[0]) && word.includes(contains[1])
-                ? "yes"
-                : "no"} */}
-            </p>
             <p className={styles.text}>
               Hello fellow shoppers! We're currently building our new fashion
               store. Add your email below to stay up-to-date with announcements
@@ -125,7 +124,9 @@ export const ComingSoonMobile = () => {
                 </button>
                 {/* <div className={styles.break}></div> */}
               </form>
-              <p className={styles.errorMsg}>{error_msg}</p>
+              <p ref={bottomRef} className={styles.errorMsg}>
+                {error_msg}
+              </p>
             </div>
           </div>
         </div>

@@ -165,7 +165,9 @@
 .overlayShow {
   position: fixed;
   /* Sit on top of the page content */
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   visibility: visible;
   /* Hidden by default */
   width: 100%;
