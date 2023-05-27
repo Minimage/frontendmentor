@@ -3,8 +3,8 @@ import person from "../../icons/hero-desktop.jpg";
 import background from "../../icons/bg-pattern-desktop.svg";
 import logo from "../../icons/logo.svg";
 import btn_bg from "../../icons/icon-arrow.svg";
-import { useState, useRef, useEffect } from "react";
-import Lottie, { LottieRefCurrentProps } from "lottie-react";
+import { useState, useRef } from "react";
+import Lottie from "lottie-react";
 import Success from "../../assests/success.json";
 
 export const ComingSoon = () => {
@@ -39,8 +39,6 @@ export const ComingSoon = () => {
       playAnimation();
       setToggle(false);
     } else setToggle(true);
-
-    console.log(toggle);
   };
 
   // On every key down, this function is called but will not fire until enter is pressed
@@ -62,16 +60,12 @@ export const ComingSoon = () => {
         <Lottie
           lottieRef={lottieRef}
           loop={false}
-          // action="visibility: [0.4, 0.9]"
           onComplete={() => {
             setOverly(false);
             stopAnimation();
-
-            // lottieRef.current.play();
           }}
           style={{ position: "absolute", left: "42%", top: "29%" }}
           animationData={Success}
-          // loop={false}
         />
       </div>
       <div
