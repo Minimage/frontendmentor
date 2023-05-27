@@ -118,6 +118,7 @@ export const ComingSoon = () => {
             </div>
 
             <div className={styles.errorHolder}>
+              {/* if toggle is true then it will show error message */}
               <p className={toggle ? `${styles.show}` : `${styles.hide}`}>
                 Please provide a valid email
               </p>
