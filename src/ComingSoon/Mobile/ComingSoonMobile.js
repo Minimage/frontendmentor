@@ -4,31 +4,59 @@ import background from "../../icons/bg-pattern-desktop.svg";
 import logo from "../../icons/logo.svg";
 import btn_bg from "../../icons/icon-arrow.svg";
 import errorIcon from "../../icons/icon-error.svg";
-import { useState } from "react";
+import Lottie from "lottie-react";
+import Success from "../../assests/success.json";
+import { useState, useRef } from "react";
 
 export const ComingSoonMobile = () => {
+  const lottieRef = useRef();
   const [email, setEmail] = useState("");
   const [error_msg, setErrorMsg] = useState("");
   const [error_icon, setErrorIcon] = useState(false);
   const contains = ["@", "."];
 
   const value = contains.every((item) => email.includes(item));
+  const [overlay, setOverlay] = useState(false);
+
+  const stopAnimation = () => {
+    lottieRef.current.stop();
+  };
+
+  const playAnimation = () => {
+    lottieRef.current.play();
+  };
 
   const handleClick = (event) => {
     event.preventDefault();
 
     if (value === false) {
-      console.log("Field doesnt contain correct values");
       setErrorMsg("Please enter a valid email");
       setErrorIcon(true);
     } else {
       setErrorMsg("");
+      setOverlay(true);
       setErrorIcon(false);
+      playAnimation();
     }
   };
 
   return (
     <div className={styles.container}>
+      <div
+        className={
+          overlay === false ? `${styles.overlayHide}` : `${styles.overlayShow}`
+        }
+      >
+        <Lottie
+          loop="false"
+          onComplete={() => {
+            stopAnimation();
+            setOverlay(false);
+          }}
+          lottieRef={lottieRef}
+          animationData={Success}
+        />
+      </div>
       <div
         style={{ backgroundImage: `url(${background})` }}
         className={styles.left}
