@@ -1,15 +1,16 @@
 import { useMediaQuery } from "react-responsive";
+import { Results } from "./Results/Desktop/Results";
 
 const Desktop = ({ children }) => {
-  const isDesktop = useMediaQuery({ minWidth: 906 });
-  return isDesktop ? children : null;
+  const isDesktop = useMediaQuery({ minWidth: 750 });
+  return isDesktop ? <Results /> : null;
 };
 // const Tablet = ({ children }) => {
 //   const isTablet = useMediaQuery({ minWidth: 796, maxWidth: 1022 });
 //   return isTablet ? children : null;
 // };
 const Mobile = ({ children }) => {
-  const isMobile = useMediaQuery({ maxWidth: 905 });
+  const isMobile = useMediaQuery({ maxWidth: 749 });
   return isMobile ? children : null;
 };
 // const Default = ({ children }) => {

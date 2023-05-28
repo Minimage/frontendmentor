@@ -1,0 +1,35 @@
+.item {
+    width: 100%;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    border-radius: 10px;
+    margin-top: 17px;
+
+
+}
+
+.icon {
+    margin-left: 20px;
+}
+
+.category {
+    margin-left: 15px;
+}
+
+.score {
+    width: 70px;
+    height: 50px;
+    /* background-color: palegoldenrod; */
+    margin-left: auto;
+    margin-top: 10%;
+    margin-right: 30px;
+    align-self: center;
+    text-align: center;
+}
+
+.percent {
+    color: hsl(246, 100%, 87%);
+}
