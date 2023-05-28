@@ -20,7 +20,7 @@ export const Item = (props) => {
   return (
     <div style={{ backgroundColor: bgColor[index] }} className={style.item}>
       <div className={style.icon}>
-        <img alt="Icon" src={data.icon} />
+        {/* <img alt="Icon" src={data.icon} /> */}
       </div>
       <div style={{ color: text[index] }} className={style.category}>
         {data.category}
