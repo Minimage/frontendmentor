@@ -1,8 +1,9 @@
 import { useMediaQuery } from "react-responsive";
 import { Results } from "./Results/Desktop/Results";
+import { ResultsMobile } from "./Results/Mobile/ResultsMobile";
 
 const Desktop = ({ children }) => {
-  const isDesktop = useMediaQuery({ minWidth: 750 });
+  const isDesktop = useMediaQuery({ minWidth: 640 });
   return isDesktop ? <Results /> : null;
 };
 // const Tablet = ({ children }) => {
@@ -10,8 +11,8 @@ const Desktop = ({ children }) => {
 //   return isTablet ? children : null;
 // };
 const Mobile = ({ children }) => {
-  const isMobile = useMediaQuery({ maxWidth: 749 });
-  return isMobile ? children : null;
+  const isMobile = useMediaQuery({ maxWidth: 639 });
+  return isMobile ? <ResultsMobile /> : null;
 };
 // const Default = ({ children }) => {
 //   const isNotMobile = useMediaQuery({ minWidth: 768 });
