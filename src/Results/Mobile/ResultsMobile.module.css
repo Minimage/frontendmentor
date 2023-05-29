@@ -36,6 +36,7 @@
 
 
 
+
 .topDiv {
     text-align: center;
     background: rgb(120, 87, 255);
@@ -121,12 +122,13 @@
     padding-bottom: 20px;
     border-radius: 50px;
     cursor: pointer;
+    margin-top: 3%;
 
 }
 
 .btn:hover {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 3%;
     color: white;
     font-weight: 800;
     background: var(--light-gray-blue);
@@ -138,7 +140,7 @@
 
 .btn:active {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 3%;
     color: white;
     font-weight: 800;
     background: linear-gradient(180deg, rgba(120, 87, 255, 1) 0%, rgba(46, 43, 233, 1) 100%);
